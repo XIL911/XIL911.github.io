@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XIL</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.jpg" type="image/jpg">
+    <style>
+        @keyframes buttonHover {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 0;
+        }
+
+        p {
+            margin: 10px 0 20px;
+            font-size: 1.2rem;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            width: 160px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 30px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .button:hover {
+            background-color: #555;
+            animation: buttonHover 0.3s;
+        }
+
+        .button:focus {
+            outline: 2px solid #555;
+            outline-offset: 4px;
+        }
+
+        .motto-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            background-color: #222;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 90%;
+            width: 350px;
+            color: white;
+            font-size: 1rem;
+            line-height: 1.5;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: rgb(156, 156, 156);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            font-size: 1rem;
+            color: #aaa;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .button {
+                width: 140px;
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            .motto-container {
+                font-size: 0.9rem;
+                padding: 20px;
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+            .button {
+                width: 120px;
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        function showMotto() {
+            const mottoContainer = document.getElementById('motto-container');
+            mottoContainer.style.display = 'block';
+        }
+
+        function hideMotto() {
+            const mottoContainer = document.getElementById('motto-container');
+            mottoContainer.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>XIL</h1>
+        <p>Elite Gym Community of Like-Minded Individuals</p>
+        <div class="buttons">
+            <a href="https://discord.gg/nDwEfP4muu" class="button"><i class="fas fa-comments"></i>Join Discord</a>
+            <a href="#" class="button" onclick="showMotto()"><i class="fas fa-info-circle"></i>About XIL</a>
+        </div>
+        <div id="motto-container" class="motto-container">
+            <button class="close-btn" onclick="hideMotto()">&times;</button>
+            Our mission is to establish a friendly gym community where everyone supports each other emotionally and shares tips and tricks for various gym workouts.
+        </div>
+    </div>
+    <footer>
+        @xil official 2025
+    </footer>
+</body>
+</html>
